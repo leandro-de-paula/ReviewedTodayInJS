@@ -1,0 +1,51 @@
+<style type="text/css">
+    .s-more > .s-more-items:last-child::after {
+      content: " +";
+    }
+    
+    .s-d-none{
+      display: none;
+    }
+    </style>
+    
+    <ul class="s-more">
+        <li class="s-more-items">1</li>
+        <li class="s-more-items">2</li>
+        <li class="s-more-items">3</li>
+        <li class="s-more-items">4</li>
+        <li class="s-more-items">5</li>
+        <li class="s-more-items">6</li>
+        <li class="s-more-items">7</li>
+        <li class="s-more-items">8</li>
+        <li class="s-more-items">9</li>
+        <li class="s-more-items">10</li>
+        <li class="s-more-items">11</li>
+        <li class="s-more-items">12</li>
+        <li class="s-more-items">13</li>
+        <li class="s-more-items">14</li>
+        <li class="s-more-items" onclick="morelist()">VEJA MAIS</li>
+      </ul>
+    
+      <script type="text/javascript">
+      function morelist(){
+      var cont = 0;
+      var items = document.querySelectorAll(".s-more-items");
+      var itemsNone = document.querySelectorAll(".s-d-none");
+    
+      if (itemsNone.length > 0) {
+        items.forEach(item => item.classList.remove("s-d-none"));
+      }
+      else {
+        items.forEach(item => {
+          if (cont == items.length-1) {
+          }
+          else{
+            item.classList.add("s-d-none");
+          }
+          cont++;
+        });
+      }
+    }
+    
+     window.onload = morelist();
+    </script>

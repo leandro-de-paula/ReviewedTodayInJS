@@ -4,7 +4,7 @@ Para rodar o <server.js>, siga estas etapas:
 
 Linux | macOS | Windows:
 ```
-<npm i>
+npm i
 ```
 
 
@@ -14,5 +14,5 @@ Linux | macOS | Windows:
 Para usar <server.js>, siga estas etapas:
 
 ```
-<node server.js>
+node server.js
 ```

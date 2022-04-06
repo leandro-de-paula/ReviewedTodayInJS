@@ -16,3 +16,9 @@ Para usar <server.js>, siga estas etapas:
 ```
 node server.js
 ```
+
+ou para restartar automaticamente ao codar:
+
+```
+nodemon
+```

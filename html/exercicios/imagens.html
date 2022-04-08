@@ -1,0 +1,102 @@
+<script>
+    console.log('start')
+    function slide1() {
+        document.getElementById('s4').style.display = 'none'
+        console.log('s1')
+        document.getElementById('s1').style.display = 'block'        
+        setTimeout("slide2()", 10000)
+    }
+    function slide2() {
+        document.getElementById('s1').style.display = 'none'
+        console.log('s2')
+        document.getElementById('s2').style.display = 'block'        
+        setTimeout("slide3()", 10000)
+    }
+    function slide3() {
+        document.getElementById('s2').style.display = 'none'
+        console.log('s3')
+        document.getElementById('s3').style.display = 'block'        
+        setTimeout("slide4()", 10000)
+    }
+    function slide4() {
+        document.getElementById('s3').style.display = 'none'
+        console.log('s4')
+        document.getElementById('s4').style.display = 'block'        
+        setTimeout("slide1()", 10000)
+    }
+    function slides() {
+        console.log('AQUI--slider')
+        for (let i = 1; i < 6; i++) {
+            console.log(`${'s'+i}`)
+            let slide = document.getElementById(`${'s'+i}`)
+            console.log(slide)
+            if (!slide) {
+                slides()
+            } else {
+                slide.style.display = 'block'
+                setTimeout(10000)
+            }
+            // document.getElementById(`${'s'+i}`).style.display = 'block'
+            // setTimeout(1000)
+        }
+        // document.getElementById('s1').style.display = 'block'
+        // setTimeout("slide2()", 1000)
+    }
+</script>
+<div>
+    <ul>
+        <li>Criando Banners Automáticos</li>
+        <li>Criando Banners Automáticos com links</li>
+        <li>Criando Slides</li>
+
+    </ul>
+</div>
+
+<div wm-slider onload="slide1()">
+
+    <p id="s1">
+    <img 
+    src="https://source.unsplash.com/random/513x342" 
+    alt="Imagens aleatorias" 
+    width="513" 
+    height="342" 
+    title="Inamgens aleatorias"
+    >
+</p>
+
+<p id="s2">
+    <img src="https://memesengracados.net/wp-content/uploads/2020/09/bobesponja.gif" alt="gif bob esponja">
+</p>
+<p id="s3" class="circular">
+    <img src="https://source.unsplash.com/random/500x400" alt="">
+</p>
+<p id="s4" class="texto">
+    <img 
+        src="https://source.unsplash.com/random/300x200" 
+        align="left"
+        >
+    Texto bla bla jnvajbçfljnbadfnz~lkfkrnflknle  fenawjnfa
+    bskdjbngdlçkbnsd~lbkadflr rtkb fb djnkn kj bk dkjfnsdjnv
+    vfnfgobsn.
+</p>
+
+</div>
+<style>
+    p {
+        position: absolute;
+        display: none;
+    }
+    .circular {
+        width: 513px;
+    }
+    .texto {
+        width: 400px;
+    }
+    .texto img {
+        margin-right: 10px;
+    }
+</style>
+<script>
+    console.log('action')
+    slide1()
+</script>

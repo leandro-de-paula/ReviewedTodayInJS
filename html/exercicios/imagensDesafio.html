@@ -1,0 +1,61 @@
+<div wm-slider>
+
+    <p id="s1">
+    <img 
+    src="https://source.unsplash.com/random/513x342" 
+    alt="Imagens aleatorias" 
+    width="513" 
+    height="342" 
+    title="Inamgens aleatorias"
+    >
+</p>
+
+<p id="s2">
+    <img src="https://memesengracados.net/wp-content/uploads/2020/09/bobesponja.gif" alt="gif bob esponja">
+</p>
+<p id="s3" class="circular">
+    <img src="https://source.unsplash.com/random/500x400" alt="">
+</p>
+<p id="s4" class="texto">
+    <img 
+        src="https://source.unsplash.com/random/300x200" 
+        align="left"
+        >
+    Texto bla bla jnvajbçfljnbadfnz~lkfkrnflknle  fenawjnfa
+    bskdjbngdlçkbnsd~lbkadflr rtkb fb djnkn kj bk dkjfnsdjnv
+    vfnfgobsn.
+</p>
+
+</div>
+<style>
+    p {
+        position: absolute;
+        display: none;
+    }
+    .circular {
+        width: 513px;
+    }
+    .texto {
+        width: 400px;
+    }
+    .texto img {
+        margin-right: 10px;
+    }
+</style>
+<script>
+    function mover(elem,inicio,fim,passo,callback) {
+        const novoInicio = inicio - passo
+        if (novoInicio >= fim) {
+            elem.style.left = novoInicio + 'px'
+            setTimeout(() => mover(elem,novoInicio,fim,passo,callback),7)
+        } else {
+            callback()
+        }
+    }
+    const p = document.querySelector('[wm-slider] > p')
+    p.style.display = 'block'
+
+    mover(p, 1500, -600, 5, () => {
+        console.log('Terminou')
+    })
+</script>

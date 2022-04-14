@@ -13,7 +13,7 @@ body {
     display: flex;
     background: 333;
     min-height: 100vh;
-    background: linear-gradient(135deg, #000000 0%, #333 48%, #686868);
+    background: linear-gradient(135deg, #000000 0%, #333 48%, #686868 100%);
     background-size: cover;
     align-items: center;
     justify-content: center;
@@ -29,7 +29,67 @@ body {
     width: 100%;
 }
 
+.player-controls {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(100%) translateY(-5px);
+    transition: 0.3s;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.player-controls:hover {
+    transform: translateY(0);
+}
+
+.play-button {
+    width: 10%;
+    border:none;
+    background: black;
+    color: white;
+    padding: 10px;
+}
+
+.play-button:focus{
+    outline: none;
+}
+
 .time {
     font-size: 1em;
     color:white;
+    width: 15%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type='range']{
+    -webkit-appearance: none;
+    background: transparent;
+    margin: 0;
+    width: 75%;
+    padding: 0 10px;
+}
+
+input[type="range"]:focus{
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100px;
+    height: 10px;
+    cursor: pointer;
+    background: black;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 10px;
+    width: 10px;
+    background: orangered;
+    cursor: pointer;
 }

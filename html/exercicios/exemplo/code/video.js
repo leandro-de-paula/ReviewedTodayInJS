@@ -32,7 +32,7 @@ const currentTime = () => {
   let durationSeconds = Math.floor(video.duration - durationMinutes * 60)
 
   currentTimeElement.innerHTML = `${currentMinutes}:${currentSeconds < 10 ? '0'+currentSeconds : currentSeconds}`
-  durationTimeElement.innerHTML = `${durationMinutes}:${durationSeconds}`
+  durationTimeElement.innerHTML = `${durationMinutes}:${durationSeconds < 10 ? '0'+durationSeconds : durationSeconds}`
 }
 
 video.addEventListener('timeupdate', currentTime)

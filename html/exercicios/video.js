@@ -1,4 +1,3 @@
-const videoPlayer = document.querySelector('.video-player')
 const video = document.querySelector('.video')
 const playButton = document.querySelector('.play-button')
 const volume = document.querySelector('.volume')

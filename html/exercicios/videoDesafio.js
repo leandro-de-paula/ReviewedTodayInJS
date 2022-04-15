@@ -1,4 +1,24 @@
+const video = document.querySelector('.video')
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ *
 function startVideoControl(id){
     const video = document.getElementById(id)
     video.oncontextmenu = () => false
@@ -15,3 +35,5 @@ function startVideoControl(id){
     // document.querySelector(`[wm-avancar=${id}]`).onclick = e => video.currentTime += 0.10
 
 startVideoControl("meuVideo")
+*
+**/

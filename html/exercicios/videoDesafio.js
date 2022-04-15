@@ -1,5 +1,18 @@
-const video = document.querySelector('.video')
+const video = document.getElementById('meuVideo')
+const playButton = document.querySelector('.botao-play')
+const volume = document.querySelector('.volume')
+// const currentTimeElement = querySelector('.corrente')
+// const durationTimeElement = querySelector('.duracao')
 
+playButton.addEventListener('click',(e) => {
+    if (video.paused) {
+        video.play()
+        e.target.textContent = '❚❚'
+    } else {
+        video.pause()
+        e.target.textContent = '►'
+    }
+})
 
 
 

@@ -1,56 +1,34 @@
-    <style>
-        .progresso {
-            height: 20px;
-            width: 500px;
-            border:solid 1px #444;
-            margin: 20px;
-        }
-        .progresso > div {
-            background-color: red;
-            color: #fff;
-            height: 100%;
-            text-align: right;
-            font-size: 14px;
-            width: 30%;
-        }
-    </style>
-<video  id="meuVideo" width="800" controls autoplay controlslist="nodownload">
-    <source src="../exercicios/video/h.mp4" type="video/mp4">
-    Seu broswer não suporta a tag de video.
-</video>
+<link rel="stylesheet" href="/html/exercicios/styleVideoDesafio.css">
 
-<div wm-progresso="meuVideo" class="progresso">
-    <div></div>
+<div class="video-player">
+
+    <video  id="meuVideo" poster="/html/exercicios/img/hillsong.jpg" controlslist="nodownload">
+        <source src="../exercicios/video/h.mp4" type="video/mp4">
+        Seu broswer não suporta a tag de video.
+    </video>
+    
+    <div class="controle-player">
+        
+        <div wm-progresso="meuVideo" class="progresso">
+            <div class="progresso-preenchido"></div>
+        </div>
+        
+        <button wm-play="meuVideo" class="botao-play" title="Play">►</button>
+        
+        <input 
+        type="range" 
+        name="volume" 
+        min="0"
+        max="1"
+        step="0.01"
+        value="1"
+        >
+        
+        <div class="time">
+            <span class="corrente">0:00</span> / <span class="duracao">0:00</span>
+        </div>
+        
+    </div>
 </div>
-
-<div>
-    <button wm-play="meuVideo">Play</button>
-    <button wm-pause="meuVideo">Pause</button>
-    <button wm-stop="meuVideo">stop</button>
-    <!-- <button wm-dec="meuVideo">-</button>
-    <button wm-inc="meuVideo">+</button>
-    <button wm-retroceder="meuVideo">&#60;&#60;10</button>
-    <button wm-avancar="meuVideo">&#62;&#62;10</button> -->
-</div>
-
-<script>
-
-function startVideoControl(id){
-    const video = document.getElementById(id)
-    video.oncontextmenu = () => false
-
-    document.querySelector(`[wm-play=${id}]`).onclick = e => video.play()
-    document.querySelector(`[wm-pause=${id}]`).onclick = e => video.pause()
-    document.querySelector(`[wm-stop=${id}]`).onclick = e => {
-        video.pause()
-        video.currentTime = 0}
-    }
-    // document.querySelector(`[wm-dec=${id}]`).onclick = e => video.playbackRate -= 0.10
-    // document.querySelector(`[wm-inc=${id}]`).onclick = e => video.playbackRate += 0.10
-    // document.querySelector(`[wm-retroceder=${id}]`).onclick = e => video.currentTime -= 0.10
-    // document.querySelector(`[wm-avancar=${id}]`).onclick = e => video.currentTime += 0.10
-
-startVideoControl("meuVideo")
-
-
-</script>
+    
+<script src="/html/exercicios/videoDesafio.js"></script>

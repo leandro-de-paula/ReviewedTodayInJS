@@ -15,6 +15,12 @@ playButton.addEventListener('click',(e) => {
 })
 
 
+// Volume 
+volume.addEventListener('mousemove', (e) => {
+    video.volume = e.target.value
+})
+
+
 
 
 

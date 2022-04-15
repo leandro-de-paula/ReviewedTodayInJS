@@ -4,6 +4,8 @@ const playButton = document.querySelector('.play-button')
 const volume = document.querySelector('.volume')
 const currentTimeElement = document.querySelector('.current')
 const durationTimeElement = document.querySelector('.duration')
+const progress = document.querySelector('.video-progress')
+const progressBar = document.querySelector('.video-progress-filled')
 
 
 playButton.addEventListener('click', (e) => {
@@ -33,3 +35,16 @@ const currentTime = () => {
 }
 
 video.addEventListener('timeupdate', currentTime)
+
+
+// Progress Bar
+video.addEventListener('timeupdate', () => {
+    const percentage = (video.currentTime / video.duration) * 100
+    progressBar.style.width = `${percentage}%`
+})
+
+// change progress bar on click
+progress.addEventListener('click', (e) => {
+    const progressTime = (e.offsetX / progress.offsetWidth) * video.duration
+    video.currentTime = progressTime
+})

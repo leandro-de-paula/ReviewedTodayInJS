@@ -1,10 +1,23 @@
 const video = document.getElementById('meuVideo')
 const playButton = document.querySelector('.botao-play')
+const playVideo = document.getElementById('meuVideo')
 const volume = document.querySelector('.volume')
-// const currentTimeElement = querySelector('.corrente')
-// const durationTimeElement = querySelector('.duracao')
+const currentTimeElement = document.querySelector('.current')
+const durationTimeElement = document.querySelector('.duration')
+const progressBar = document.querySelector('.progresso-preenchido')
+const progresso = document.querySelector('.progresso')
 
 playButton.addEventListener('click',(e) => {
+    if (video.paused) {
+        video.play()
+        e.target.textContent = '❚❚'
+    } else {
+        video.pause()
+        e.target.textContent = '►'
+    }
+})
+
+playVideo.addEventListener('click',(e) => {
     if (video.paused) {
         video.play()
         e.target.textContent = '❚❚'
@@ -20,7 +33,31 @@ volume.addEventListener('mousemove', (e) => {
     video.volume = e.target.value
 })
 
+// Tempo corrente e duração total do tempo do video
+const currentTime = () => {
+    let currentMinutes = Math.floor(video.currentTime / 60)
+    let currentSeconds = Math.floor(video.currentTime - currentMinutes * 60)
+    let durationMinutes = Math.floor(video.duration / 60)
+    let durationSeconds = Math.floor(video.duration - durationMinutes * 60)
 
+    currentTimeElement.innerHTML = `${currentMinutes}:${currentSeconds < 10 ? '0'+currentSeconds : currentSeconds}`
+    durationTimeElement.innerHTML = `${durationMinutes}:${durationSeconds < 10 ? '0'+durationSeconds : durationSeconds}`
+}
+
+video.addEventListener('timeupdate', currentTime)
+
+
+// Barra de progresso
+video.addEventListener('timeupdate', () => {
+    const percentage = (video.currentTime / video.duration) * 100
+    progressBar.style.width = `${percentage}%`
+})
+
+// Clicando na Barra de progresso  
+progresso.addEventListener('click', (e) => {
+    const progressTime = (e.offsetX / progresso.offsetWidth) * video.duration
+    video.currentTime = progressTime
+})
 
 
 

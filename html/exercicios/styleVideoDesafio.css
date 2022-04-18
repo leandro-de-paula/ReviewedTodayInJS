@@ -82,13 +82,13 @@ input[type="range"]::-webkit-slider-thumb {
     background: rgba(0, 0, 0, 0.6);
     cursor: pointer;
 }
-.progresso > div {
+.progresso-preenchido {
     width:0;
     background: orangered;
 }
 
-.progresso:hover{
-    height: 12px;
+.progresso:hover {
+    height: 40px;
 }
 
 

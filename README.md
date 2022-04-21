@@ -23,16 +23,19 @@ O projeto foi feito no `<Linux>`, mas pode rodar em qualquer sistema operacional
 ## 🚀 Instalando <ReviewedTodayInJS>
 
 Para instalar,<ReviewedTodayInJS> siga estas etapas:
-
 Linux: `<Terminal>` | macOS: `<Terminal>` | Windows: `<cmd>` | Android: `<Termux>`:
 
-1 - Clone o projeto:
+Clone ou Download do Projeto 
+
+-**Clone o projeto:**
 
 ```
 git clone https://github.com/leandro-de-paula/ReviewedTodayInJS.git
 ``` 
+**Download zip:** ⬇️
+[Template-forms-CRUD-PHP](https://github.com/leandro-de-paula/Template-forms-CRUD-PHP/archive/main.zip). 
 
-2 - Instale um servidor HTTP
+-**Instale um servidor HTTP**
 
 ```
 npm install --global http-server
@@ -43,18 +46,18 @@ npm install --global http-server
 
 Para usar <ReviewedTodayInJS>, siga estas etapas:
 
-### Execução
+**Execução**
 Abra a pasta do diretório no `<Terminal / cmd / Termux>`
 
 ```
 http-server -c-1 -p 9003
 ```
 
-> Click segurando o CTRL `<Linux / Windows / Android>` ou COMAND `<macOS>` no link que será gerado para abrir no navegador
+_**Important Note**: Click segurando o CTRL `<Linux / Windows / Android>` ou COMAND `<macOS>` no link que será gerado para abrir no navegador_
 
 
 ---
-By Leandro de Paula
+By **Leandro de Paula**
 E-mail: [leandrodepaula.ti@gmail.com](mailto:leandrodepaula.ti@gmail.com)
 
 Please find me on [LinkedIn](https://www.linkedin.com/in/leandro-de-paula/) for a more detailed description of my full work experience, education and certification.

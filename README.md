@@ -24,7 +24,7 @@ O projeto foi feito no `<Linux>`, mas pode rodar em qualquer sistema operacional
 
 Para instalar,<ReviewedTodayInJS> siga estas etapas:
 
-| Linux: `<Terminal>` | macOS: `<Terminal>` | Windows: `<cmd>` | Android: `<Termux>` |:
+Linux: `<Terminal>` | macOS: `<Terminal>` | Windows: `<cmd>` | Android: `<Termux>`:
 
 1 - Clone o projeto:
 
@@ -50,7 +50,7 @@ Abra a pasta do diretório no `<Terminal / cmd / Termux>`
 http-server -c-1 -p 9003
 ```
 
-** Click segurando o CTRL `<Linux / Windows / Android>` ou COMAND `<macOS>` no link que será gerado para abrir no navegador **
+> Click segurando o CTRL `<Linux / Windows / Android>` ou COMAND `<macOS>` no link que será gerado para abrir no navegador
 
 
 ---

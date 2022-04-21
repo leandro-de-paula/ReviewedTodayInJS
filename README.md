@@ -33,7 +33,7 @@ Clone ou Download do Projeto
 git clone https://github.com/leandro-de-paula/ReviewedTodayInJS.git
 ``` 
 **Download zip:** ⬇️
-[Template-forms-CRUD-PHP](https://github.com/leandro-de-paula/Template-forms-CRUD-PHP/archive/main.zip). 
+[Template-forms-CRUD-PHP](https://github.com/leandro-de-paula/ReviewedTodayInJS/archive/main.zip). 
 
 -**Instale um servidor HTTP**
 

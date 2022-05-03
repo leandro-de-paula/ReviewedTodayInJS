@@ -5,7 +5,39 @@
     <meta charset="UTF-8">
     <title>Desafio Card</title>
     <style>
-        /* ... */
+        .card {
+            display: flex;
+            justify-content: left;
+            align-items: right;
+        }
+
+        .curso {
+            border-radius: 5px;
+            box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+            padding: 30px;
+            margin: 20px;
+            width: 400px;
+            transition: all 0.3s ease-out;
+        }
+
+        .curso:hover {
+            transform: translateY(-5px);
+            cursor: pointer;
+        }
+        
+        .curso p {
+            color: #a3a5ae;
+            font-size: 16px;
+        }
+        
+        .curso img {
+            float: right;
+            max-width: 64px;
+            max-height: 64px;
+        }
+
+        
+
     </style>
 </head>
 
@@ -16,7 +48,7 @@
     <img src="http://files.cod3r.com.br/curso-web/card.png" height="340" alt="Objetivo">
 
     <h2>Resultado</h2>
-    <div>
+    <div class="card">
         <div class="curso">
             <img src="http://files.cod3r.com.br/curso-web/curso1.jpg" />
             <div class="curso-info">

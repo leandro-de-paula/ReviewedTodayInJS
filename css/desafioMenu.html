@@ -8,84 +8,107 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
         * {
-            margin: 0px;
-            /*Distancia entre os itens*/
-            padding: 0px;
-            /* box-sizing: border-box; */
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+            background-color: lightgray;
         }
 
         .cabecalho {
-            overflow: hidden;
-            background-color: #333;
-            white-space: nowrap;
+            background: #222;
+            border-bottom: solid 5px orangered;
+            height: 80px;
+            box-sizing: content-box;
         }
 
-        .logo {
-            display: block;
+        .logo  {
+            display: inline-block;
+            height: 80px;
+            padding: 15px;
         }
-        
-        .logo  a  img {
-            float: left;
-            /* width: 20%; */
-            height: 35px;
+
+        .logo img {
+            height: 100%;
         }
 
         .menu-toggle {
-            position: relative;
-            display: none;
+            float: right;
+            color: #eee;
+            background: #444;
+            border: solid 1px #555;
+            border-radius: 5px;
+            height: 40px;
+            padding: 10px 20px;
+            margin: 20px 15px;
         }
 
-        ul {
-            float: left;
+        .menu {
+            display: inline-block;
+            vertical-align: top;
+            height: 80px;
+            padding: 25px;
         }
-        
-        ul li{
-            float: left;
-            list-style:none;
-            position:relative;
+
+        .menu ul {
+            margin: 0;
+            padding: 0;
         }
-        
-        ul a{
-            display: block;
-            padding: 0 2em;
-            line-height: 2.2em;
+
+        .menu li {
+            display: inline-block;
+        }
+
+        .cabecalho a {
             text-decoration: none;
-            display: block;
-            color:white;
-            font-size: 17px;
+            color: #eee;
+            font-size: 1.3em;
         }
 
-        ul a:hover {
-            background: orangered;
-            color: white;
+        .menu a {
+            padding: 15px;
         }
 
         .autenticacao {
-            text-align: right;
+            float: right;
+            height: 80px;
+            padding: 25px;
         }
 
-        .autenticacao a {
-            text-decoration: none;
-            color: white;
-        }
-
-        .autenticacao a:hover {
+        .menu a:hover,
+        .menu a.selected {
             background: orangered;
             color: white;
         }
 
-        @media (max-width:698px) {
-            ul {
+        .botao {
+            border-radius: 30px;
+            padding: 10px 35px;
+            margin: 10px;
+        }
+        
+        .destaque {
+            background: orangered;
+            color: white;
+        }
+
+        @media(min-width: 679px) {
+            .menu-toggle {
                 display: none;
             }
+        }
 
-            /* .autenticacao {
-               text-align: center;
-            } */
+        @media(max-width: 680px) {
+            .menu {
+                display: none;
+            }
+        }
 
-            .menu-toggle {
-                display: block;
-                float: right;
+        @media(max-width: 945px) {
+            .autenticacao {
+                display: none;
             }
         }
     </style>
@@ -98,6 +121,9 @@
                 <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
             </a>
         </div>
+        <button class="menu-toggle">
+            <i class="fa fa-lg fa-bars"></i>
+        </button>
         <nav class="menu">
             <ul>
                 <li>
@@ -118,13 +144,19 @@
             <a href="#login">Login</a>
             <a href="#registar" class="botao destaque">Registrar</a>
         </aside>
-        <button class="menu-toggle">
-            <i class="fa fa-lg fa-bars"></i>
-        </button>
     </header>
 
     <script>
-        // ...
+        window.onhashchange = function(e) {
+            const oldURL = e.oldURL.split('#')[1]
+            const newURL = e.newURL.split('#')[1]
+            alert(oldURL, newURL)
+            console.log(oldURL, newURL)
+            const oldLink = document.querySelector(`.menu a[href='#${oldURL}']`)
+            const newLink = document.querySelector(`.menu a[href='#${newURL}']`)
+            oldLink && oldLink.classList.remove('selected')
+            newLink && newLink.classList.add('selected')
+        }
     </script>
 </body>
 

@@ -69,7 +69,7 @@ function Barreiras(altura, abertura, largura, espaco, notificarPonto) {
             const meio = largura / 2 
             const cruzouOMeio = par.getX() + deslocamento >= meio 
                 && par.getX() < meio
-            if (cruzouOMeio)  notificarPonto    
+            if (cruzouOMeio)  notificarPonto()    
         })
     }
 }

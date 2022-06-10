@@ -11,6 +11,59 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+        function ajax(config) {
+            const xhr = new XMLHttpRequest()
+            xhr.open(config.method, config.url, true)
+
+            xhr.onload = e => {
+                if (xhr.status === 200) {
+                    config.success(xhr.response)
+                } else if(xhr.status >= 400) {
+                    config.error({
+                        code: xhr.status,
+                        text: xhr.statusText
+                    })
+                }
+            }
+            xhr.send()
+        }
+
+        function createTable(estados) {
+            const lines = estados.map(estado => {
+                const tdId = document.createElement('td')
+                tdId.innerHTML = estado.id 
+
+                const tdNome = document.createElement('td')
+                tdNome.innerHTML = estado.nome 
+
+                const tdSigla = document.createElement('td')
+                tdSigla.innerHTML = estado.sigla
+
+                const tr = document.createElement('tr')
+
+                tr.appendChild(tdId)
+                tr.appendChild(tdNome)
+                tr.appendChild(tdSigla)
+
+                return tr
+            })
+
+            const table = document.createElement('table')
+            lines.forEach(line => table.appendChild(line))
+            document.body.appendChild(table)
+        }
+
+        ajax({
+            method: "get",
+            url: "dados/estados.json",
+            success(answer) {
+                const estados = JSON.parse(answer)
+                createTable(estados)
+            },
+            error(e) {
+                const msg = document.createTextNode(`${e.code}: ${e.text}`)
+                document.body.appendChild(msg)
+            }
+        })
     </script>
 </body>

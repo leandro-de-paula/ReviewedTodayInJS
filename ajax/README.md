@@ -1,6 +1,4 @@
 # Ajax
-![GitHub repo size](https://img.shields.io/github/repo-size/leandro-de-paula/ReviewedTodayInJS/ajax/?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/leandro-de-paula/ReviewedTodayInJS/ajax/?style=for-the-badge)
 
 
 > **Asynchronous JavaScript And XML (AJAX)**
@@ -27,7 +25,7 @@ Linux: `<Terminal>` | macOS: `<Terminal>` | Windows: `<cmd>` | Android: `<Termux
 **Instale as dependencias**
 Abra o terminal na pasta Ajax:
 ```
-cd Ajax
+cd ajax
 ```
 
 Execute o comando de instalação:

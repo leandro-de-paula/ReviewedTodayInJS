@@ -1,5 +1,6 @@
 # Ajax
 
+!["ajax"](https://github.com/leandro-de-paula/ReviewedTodayInJS/blob/main/ajax/upload/1655452855502_ajax-icon-8.jpg "Logo Marca Ajax")
 
 > **Asynchronous JavaScript And XML (AJAX)**
 > - É uma técnica usada com JavaScript

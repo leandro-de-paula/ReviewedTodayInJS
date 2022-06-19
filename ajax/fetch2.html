@@ -29,11 +29,11 @@
     </form>
     <div id="resultado"></div>
     <script>
-        document.usuarioForm.onsubmit = async e => {
-            e.preventDefaul()
-            const form = e.target 
-            const data = new FormData(form)
+         document.usuarioForm.onsubmit = async e => {
+            e.preventDefault()
 
+            const form = e.target
+            const data = new FormData(form)
             data.append('ajax', true)
 
             const options = {

@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -29,7 +29,7 @@
     </form>
     <div id="resultado"></div>
     <script>
-         document.usuarioForm.onsubmit = async e => {
+        document.usuarioForm.onsubmit = async e => {
             e.preventDefault()
 
             const form = e.target
@@ -42,14 +42,22 @@
             }
 
             const resultado = document.getElementById('resultado')
-            fetch(form.action, options)
-                .then(resp => resp.json())
-                .then(json => {
-                    resultado.innerHTML = JSON.stringify(json)
-                })
-                .catch(e => {
-                    resultado.innerHTML = e
-                })
+            // fetch(form.action, options)
+            //     .then(resp => resp.json())
+            //     .then(json => {
+            //         resultado.innerHTML = JSON.stringify(json)
+            //     })
+            //     .catch(e => {
+            //         resultado.innerHTML = e
+            //     })
+            
+            try {
+                const resp = await fetch(form.action, options)
+                const json = await resp.json()
+                resultado.innerHTML = JSON.stringify(json)
+            } catch (e) {
+                resultado.innerHTML = e
+            }
         }
     </script>
 </body>

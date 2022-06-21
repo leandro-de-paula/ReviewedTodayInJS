@@ -37,20 +37,30 @@ app.post('/formulario', (req, res) => {
     })
 })
 
+app.get('/parOuImpar', (req, res) => {
+    // req.body
+    // req.query
+    // req.params
+    const par = parseInt(req.query.numero) % 2 === 0
+    res.send({
+        resultado: par ? 'par' : 'impar'
+    })
+})
+
 app.get('/teste', (req, res) => res.send(
-    'Executando... ' +  
+    'Executando... ' +
     'http://localhost:9004' + ' - ' +
-    now.getDate() + '/' + 
-    (now.getMonth() + 1) + '/' + 
-    now.getFullYear() +' - ' + 
-    now.getHours() +':' + 
+    now.getDate() + '/' +
+    (now.getMonth() + 1) + '/' +
+    now.getFullYear() +' - ' +
+    now.getHours() +':' +
     now.getMinutes()))
 
 app.listen(9004, () => console.log(
-    'Executando... ' +  
+    'Executando... ' +
     'http://localhost:9004' + ' - ' +
-    now.getDate() + '/' + 
-    (now.getMonth() + 1) + '/' + 
-    now.getFullYear() +' - ' + 
-    now.getHours() +':' + 
+    now.getDate() + '/' +
+    (now.getMonth() + 1) + '/' +
+    now.getFullYear() +' - ' +
+    now.getHours() +':' +
     now.getMinutes()))

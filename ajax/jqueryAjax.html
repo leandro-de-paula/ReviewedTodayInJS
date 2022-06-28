@@ -16,13 +16,13 @@
     <script>
         function exibirResultado(id, dados) {
             const text = JSON.stringify(dados)
-            document.getElementById(id).innerHTML = texto
+            document.getElementById(id).innerHTML = text
         }
 
         $.ajax({
             url: 'parOuImpar',
             data: {
-                numero: 6
+                numero: 2
             },
             success(data) {
                 exibirResultado('get', data)
@@ -35,15 +35,6 @@
             data: {
                 nome: 'Evellyn',
                 Idade: 26
-            }
-        })
-
-        $.ajax({
-            url:'formulario',
-            method: 'post',
-            data: {
-                nome: 'João',
-                idade: 40
             },
             success(data) {
                 exibirResultado('post', data)

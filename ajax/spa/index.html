@@ -39,9 +39,10 @@
 
         document.querySelectorAll('[wm-link]').forEach(link => {
             const url = link.attributes['wm-link'].value
+            const selectorDestino = link.attributes['wm-destino'].value
 
-            link.onclik = e => {
-                e.preventDefaulr()
+            link.onclick = e => {
+                e.preventDefault()
                 navegarViaAjax(url, selectorDestino)
             }
         })

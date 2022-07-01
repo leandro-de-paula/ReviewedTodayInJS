@@ -25,7 +25,7 @@
     </nav>
     <div class="pagina"></div>
     <script>
-        function navegarViaAjax(url,selector) {
+        function navegarViaAjax(url, selector, push = true) {
             if (!url || !selector) {
                 return
             }
@@ -34,6 +34,9 @@
                 .then(resp => resp.text())
                 .then(html => {
                     elemento.innerHTML = html
+                    if(push){
+                        history.pushState({ selector }, "Página Ajax", url)
+                    }
                 })
         }
 
@@ -46,5 +49,11 @@
                 navegarViaAjax(url, selectorDestino)
             }
         })
+
+        window.onpopstate = e => {
+            if(e.state){
+                navegarViaAjax(window.location.href, e.state.selector, false)
+            }
+        }
     </script>
 </body>

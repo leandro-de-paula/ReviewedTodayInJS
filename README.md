@@ -61,3 +61,4 @@ By **Leandro de Paula**
 E-mail: [leandrodepaula.ti@gmail.com](mailto:leandrodepaula.ti@gmail.com)
 
 Please find me on [LinkedIn](https://www.linkedin.com/in/leandro-de-paula/) for a more detailed description of my full work experience, education and certification.
+--- 
